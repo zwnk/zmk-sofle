@@ -1,3 +1,5 @@
+#define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200  // 600
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 30    // 10
 #include <input/processors.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -26,9 +28,10 @@
 };
 
 &msc {
-    acceleration-exponent = <0>;      // 0
-    time-to-max-speed-ms = <0>;       // 300
+    acceleration-exponent = <1>;      // 0
+    time-to-max-speed-ms = <40>;       // 300
     delay-ms = <0>;                   // 0
+    trigger-period-ms = <8>;
 };
 
 &mmv {
@@ -37,18 +40,13 @@
 };
 
 
-
-#define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200  // 600
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
-
 / {
 
     scroll_encoder: scroll_encoder {
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
         bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-
-        tap-ms = <30>;
+        tap-ms = <50>;
     };
 
     keymap {
