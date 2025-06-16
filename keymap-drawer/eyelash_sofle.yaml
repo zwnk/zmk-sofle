@@ -55,8 +55,8 @@ layers:
   - {t: \, s: '|'}
   - $$mdi:volume-off$$
   - '%'
-  - $$mdi:apple-keyboard-command$$
   - $$mdi:apple-keyboard-option$$
+  - LGUI
   - layer1
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
